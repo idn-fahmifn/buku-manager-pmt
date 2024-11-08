@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('buku_migration', function (Blueprint $table) {
+        Schema::create('buku', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_kategori');
             $table->string('judul_buku');
             $table->string('jumlah_halaman');
             $table->string('penerbit');
@@ -25,11 +26,8 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('buku_migration');
+        Schema::dropIfExists('buku');
     }
 };

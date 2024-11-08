@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\CategorieController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,3 +13,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('categories', CategorieController::class);
+Route::resource('buku', BukuController::class);
